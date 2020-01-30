@@ -14,7 +14,7 @@ const DropContent = ({ date: initialDate, onClose }) => (
       />
 );
 
-export const DateInput = () => {
+export const CalendarPage = () => {
   const [date, setDate] = React.useState();
   const [open, setOpen] = React.useState();
 

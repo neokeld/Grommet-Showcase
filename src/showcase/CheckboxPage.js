@@ -50,7 +50,7 @@ const IndeterminateCheckBox = () => {
   );
 };
 
-export const SimpleCheckBox = () => {
+export const CheckboxPage = () => {
   return (
     <Box fill pad="large">
       <Heading>Single Checkbox</Heading>

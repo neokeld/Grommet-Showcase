@@ -27,7 +27,7 @@ const folks = [
   }
 ];
 
-export const AutoComplete = () => {
+export const AutoCompletePage = () => {
   const [value, setValue] = useState("");
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestedFolks, setSuggestedFolks] = useState([]);
