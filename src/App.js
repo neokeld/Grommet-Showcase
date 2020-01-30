@@ -4,9 +4,9 @@ import { AppBar } from "./app/AppBar";
 import { Sidebar } from "./app/Sidebar";
 import { SelectionList } from "./app/SelectionList";
 
-import { AutoComplete } from "./lib/AutoComplete";
-import { DateInput } from "./lib/DateInput";
-import { SimpleCheckBox } from "./lib/SimpleCheckBox";
+import { AutoCompletePage } from "./showcase/AutoCompletePage";
+import { CalendarPage } from "./showcase/DateInputPage";
+import { CheckBoxPage } from "./showcase/SimpleCheckBoxPage";
 
 import { list } from "./list";
 
