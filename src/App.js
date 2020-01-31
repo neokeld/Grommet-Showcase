@@ -18,6 +18,12 @@ import { ProgressbarPage } from "./showcase/ProgressbarPage";
 import { SelectbuttonPage } from "./showcase/SelectbuttonPage";
 import { SliderPage } from "./showcase/SliderPage";
 import { TogglebuttonPage } from "./showcase/TogglebuttonPage";
+import { MultiselectPage } from "./showcase/MultiselectPage";
+import { CircularProgressPage } from "./showcase/CircularProgressPage";
+import { AppBarPage } from "./showcase/AppBarPage";
+import { AvatarPage } from "./showcase/AvatarPage";
+import { AppBarPage } from "./showcase/AppBarPage";
+import { AvatarPage } from "./showcase/AvatarPage";
 
 import { list } from "./list";
 
@@ -45,7 +51,11 @@ export const App = () => {
 		               "Progressbar" === list[selectedIndex] ? <ProgressbarPage /> :
 		                 "Selectbutton" === list[selectedIndex] ? <SelectbuttonPage /> :
 		                   "Slider" === list[selectedIndex] ? <SliderPage /> :
-		                     "Togglebutton" === list[selectedIndex] && <TogglebuttonPage />
+		                     "Togglebutton" === list[selectedIndex] ? <TogglebuttonPage /> :
+		                       "Multiselect" === list[selectedIndex] ? <MultiselectPage /> :
+		                         "CircularProgress" === list[selectedIndex] ? <CircularProgressPage /> :
+		                           "AppBar" == list[selectedIndex] ? <AppBarPage /> :
+		                             "Avatar" == list[selectedIndex] && <AvatarPage />
 	  }
         </Box>
       </Box>
