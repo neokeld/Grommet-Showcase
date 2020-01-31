@@ -15,6 +15,9 @@ import { InputSwitchPage } from "./showcase/InputSwitchPage";
 import { ListboxPage } from "./showcase/ListboxPage";
 import { MessagesPage } from "./showcase/MessagesPage";
 import { ProgressbarPage } from "./showcase/ProgressbarPage";
+import { SelectbuttonPage } from "./showcase/SelectbuttonPage";
+import { SliderPage } from "./showcase/SliderPage";
+import { TogglebuttonPage } from "./showcase/TogglebuttonPage";
 
 import { list } from "./list";
 
@@ -39,7 +42,10 @@ export const App = () => {
 		         "InputSwitch" === list[selectedIndex] ? <InputSwitchPage /> :
 		           "Listbox" === list[selectedIndex] ? <ListboxPage /> :
 		             "Messages" === list[selectedIndex] ? <MessagesPage /> :
-		               "Progressbar" === list[selectedIndex] && <ProgressbarPage />
+		               "Progressbar" === list[selectedIndex] ? <ProgressbarPage /> :
+		                 "Selectbutton" === list[selectedIndex] ? <SelectbuttonPage /> :
+		                   "Slider" === list[selectedIndex] ? <SliderPage /> :
+		                     "Togglebutton" === list[selectedIndex] && <TogglebuttonPage />
 	  }
         </Box>
       </Box>
