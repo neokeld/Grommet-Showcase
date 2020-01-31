@@ -22,6 +22,7 @@ import { MultiSelectPage } from "./showcase/MultiSelectPage";
 import { CircularProgressPage } from "./showcase/CircularProgressPage";
 import { AppBarPage } from "./showcase/AppBarPage";
 import { AvatarPage } from "./showcase/AvatarPage";
+import { TriStateCheckboxPage } from "./showcase/TriStateCheckboxPage";
 
 import { list } from "./list";
 
@@ -53,7 +54,8 @@ export const App = () => {
 		                       "MultiSelect" === list[selectedIndex] ? <MultiSelectPage /> :
 		                         "CircularProgress" === list[selectedIndex] ? <CircularProgressPage /> :
 		                           "AppBar" === list[selectedIndex] ? <AppBarPage /> :
-		                             "Avatar" === list[selectedIndex] && <AvatarPage />
+		                             "Avatar" === list[selectedIndex] ? <AvatarPage /> :
+		                               "TriStateCheckbox" === list[selectedIndex] && <TriStateCheckboxPage />
 	  }
         </Box>
       </Box>
