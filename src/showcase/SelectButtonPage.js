@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { Box, Heading, RadioButtonGroup } from "grommet";
 import { Ascend, Descend } from "grommet-icons";
 
-export const SelectbuttonPage = () => {
+export const SelectButtonPage = () => {
   const [value, setValue] = useState();
 
   return (
-      <Box pad="large">
+      <Box fill pad="large">
 	<Heading>Selectbutton</Heading>
         <RadioButtonGroup
           name="radio"

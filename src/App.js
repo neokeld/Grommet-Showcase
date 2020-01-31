@@ -14,14 +14,12 @@ import { GrowlPage } from "./showcase/GrowlPage";
 import { InputSwitchPage } from "./showcase/InputSwitchPage";
 import { ListboxPage } from "./showcase/ListboxPage";
 import { MessagesPage } from "./showcase/MessagesPage";
-import { ProgressbarPage } from "./showcase/ProgressbarPage";
-import { SelectbuttonPage } from "./showcase/SelectbuttonPage";
+import { ProgressBarPage } from "./showcase/ProgressBarPage";
+import { SelectButtonPage } from "./showcase/SelectButtonPage";
 import { SliderPage } from "./showcase/SliderPage";
-import { TogglebuttonPage } from "./showcase/TogglebuttonPage";
-import { MultiselectPage } from "./showcase/MultiselectPage";
+import { ToggleButtonPage } from "./showcase/ToggleButtonPage";
+import { MultiSelectPage } from "./showcase/MultiSelectPage";
 import { CircularProgressPage } from "./showcase/CircularProgressPage";
-import { AppBarPage } from "./showcase/AppBarPage";
-import { AvatarPage } from "./showcase/AvatarPage";
 import { AppBarPage } from "./showcase/AppBarPage";
 import { AvatarPage } from "./showcase/AvatarPage";
 
@@ -48,14 +46,14 @@ export const App = () => {
 		         "InputSwitch" === list[selectedIndex] ? <InputSwitchPage /> :
 		           "Listbox" === list[selectedIndex] ? <ListboxPage /> :
 		             "Messages" === list[selectedIndex] ? <MessagesPage /> :
-		               "Progressbar" === list[selectedIndex] ? <ProgressbarPage /> :
-		                 "Selectbutton" === list[selectedIndex] ? <SelectbuttonPage /> :
+		               "ProgressBar" === list[selectedIndex] ? <ProgressBarPage /> :
+		                 "SelectButton" === list[selectedIndex] ? <SelectButtonPage /> :
 		                   "Slider" === list[selectedIndex] ? <SliderPage /> :
-		                     "Togglebutton" === list[selectedIndex] ? <TogglebuttonPage /> :
-		                       "Multiselect" === list[selectedIndex] ? <MultiselectPage /> :
+		                     "ToggleButton" === list[selectedIndex] ? <ToggleButtonPage /> :
+		                       "MultiSelect" === list[selectedIndex] ? <MultiSelectPage /> :
 		                         "CircularProgress" === list[selectedIndex] ? <CircularProgressPage /> :
-		                           "AppBar" == list[selectedIndex] ? <AppBarPage /> :
-		                             "Avatar" == list[selectedIndex] && <AvatarPage />
+		                           "AppBar" === list[selectedIndex] ? <AppBarPage /> :
+		                             "Avatar" === list[selectedIndex] && <AvatarPage />
 	  }
         </Box>
       </Box>

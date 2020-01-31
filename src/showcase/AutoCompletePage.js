@@ -5,25 +5,25 @@ import { Box, Heading, Text, TextInput } from "grommet";
 
 const folks = [
   {
-    name: "Alan Souza",
+    name: "Michel Eyquem de Montaigne",
   },
   {
-    name: "Bryan Jacquot",
+    name: "Charles Louis de Secondat, baron de La Brède et de Montesquieu",
   },
   {
-    name: "Chris Carlozzi",
+    name: "Étienne de La Boétie",
   },
   {
-    name: "Eric Soderberg",
+    name: "Henri de Bourbon",
   },
   {
-    name: "Marlon Parizzotto",
+    name: "André Portier",
   },
   {
-    name: "Tales Chaves",
+    name: "Ange-Jacques Gabriel",
   },
   {
-    name: "Tracy Barmore",
+    name: "André-Daniel Laffon de Ladebat",
   }
 ];
 
@@ -58,9 +58,13 @@ export const AutoCompletePage = () => {
   const renderSuggestions = () => {
     return suggestedFolks
       .filter(
-        ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0
+        ({ name }) => {
+	  const normalized_name = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+	  const normalized_value = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+	  return normalized_name.indexOf(normalized_value) >= 0;
+	}
       )
-      .map(({ name, imageUrl }, index, list) => ({
+      .map(({ name }, index, list) => ({
         label: (
           <Box
             direction="row"

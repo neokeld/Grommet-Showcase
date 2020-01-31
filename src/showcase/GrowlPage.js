@@ -36,7 +36,7 @@ export const GrowlPage = () => {
             round="small"
             elevation="medium"
             pad="small"
-            background="status-ok"
+            background="brand"
           >
             <Box align="center" direction="row" gap="xsmall">
               <StatusGood />

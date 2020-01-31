@@ -6,7 +6,7 @@ export const MessagesPage = props => {
   const [open, setOpen] = React.useState(false);
 
   return (
-      <Box pad="large">
+      <Box fill pad="large" gap="medium">
         <Heading>Messages</Heading>
         <Button primary onClick={() => setOpen(!open)} label="Toggle" />
         <Collapsible open={open} {...props}>

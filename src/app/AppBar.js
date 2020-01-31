@@ -17,6 +17,6 @@ const Bar = (props) => (
 
 export const AppBar = (props) => (
   <Bar {...props}>
-    <Heading level="3" margin="none">Prime-Grommet</Heading>
+    <Heading level="3" margin="none">Grommet-Showcase</Heading>
   </Bar>
 );

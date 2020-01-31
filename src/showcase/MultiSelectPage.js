@@ -11,7 +11,7 @@ const optionList = [
   "Six"
 ];
 
-export const MultiselectPage = () => {
+export const MultiSelectPage = () => {
   const [value, setValue] = useState("");
 
   const onChange = e => {
@@ -23,9 +23,7 @@ export const MultiselectPage = () => {
   };
 
   return (
-      <Box
-        pad="large"
-      >
+      <Box fill pad="large" gap="medium">
 	<Heading>Multiselect</Heading>
         <Select
           options={optionList}
@@ -37,7 +35,6 @@ export const MultiselectPage = () => {
         <Button
           onClick={onClickClearOptions}
           disabled={!value}
-          plain
           label="Clear All"
         />
       </Box>

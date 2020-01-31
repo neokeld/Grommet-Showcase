@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Box, Select } from "grommet";
+import { Box, Heading, Select } from "grommet";
 
 export const DropdownPage = (props) => {
   const options = ["one", "two"];
@@ -10,6 +10,7 @@ export const DropdownPage = (props) => {
 
   return (
       <Box fill pad="large">
+	<Heading>Dropdown</Heading>
         <Select
           id="select"
           name="select"

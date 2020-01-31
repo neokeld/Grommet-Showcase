@@ -12,7 +12,7 @@ export const ListboxPage = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-      <Box pad="large">
+      <Box fill pad="large">
 	<Heading>Listbox</Heading>
         <List
           data={data}

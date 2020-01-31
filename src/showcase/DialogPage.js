@@ -36,7 +36,6 @@ export const DialogPage = () => {
                 label="Close"
                 onClick={onClose}
                 primary
-                color="status-critical"
               />
             </Box>
           </Box>
