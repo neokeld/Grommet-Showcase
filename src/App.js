@@ -12,6 +12,9 @@ import { DialogPage } from "./showcase/DialogPage";
 import { DropdownPage } from "./showcase/DropdownPage";
 import { GrowlPage } from "./showcase/GrowlPage";
 import { InputSwitchPage } from "./showcase/InputSwitchPage";
+import { ListboxPage } from "./showcase/ListboxPage";
+import { MessagesPage } from "./showcase/MessagesPage";
+import { ProgressbarPage } from "./showcase/ProgressbarPage";
 
 import { list } from "./list";
 
@@ -33,7 +36,10 @@ export const App = () => {
 	           "Dialog" === list[selectedIndex] ? <DialogPage /> :
 	             "Dropdown" === list[selectedIndex] ? <DropdownPage /> :
 		       "Growl" === list[selectedIndex] ? <GrowlPage /> :
-		         "InputSwitch" === list[selectedIndex] && <InputSwitchPage />
+		         "InputSwitch" === list[selectedIndex] ? <InputSwitchPage /> :
+		           "Listbox" === list[selectedIndex] ? <ListboxPage /> :
+		             "Messages" === list[selectedIndex] ? <MessagesPage /> :
+		               "Progressbar" === list[selectedIndex] && <ProgressbarPage />
 	  }
         </Box>
       </Box>
