@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Button, Grommet, Heading, Layer, Select, Text } from "grommet";
+import { Box, Button, Heading, Layer, Text } from "grommet";
 
 export const DialogPage = () => {
   const [open, setOpen] = React.useState();
