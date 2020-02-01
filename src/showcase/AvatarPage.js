@@ -3,7 +3,7 @@ import { Box, Heading } from "grommet";
 import { Avatar } from "../lib/Avatar";
 
 export const AvatarPage = () => (
-  <Box fill pad="large">
+  <Box pad="large">
     <Heading>Avatar</Heading>
     <Avatar />
   </Box>

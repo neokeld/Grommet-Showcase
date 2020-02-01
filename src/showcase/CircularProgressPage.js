@@ -18,7 +18,7 @@ export const CircularProgressPage = () => {
   }, []);
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>CircularProgress</Heading>
         <Meter
           type="circle"

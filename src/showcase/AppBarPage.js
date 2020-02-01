@@ -9,7 +9,7 @@ const items = [
 ];
 
 export const AppBarPage = () => (
-  <Box fill pad="large">
+  <Box pad="large">
     <Heading>AppBar / Toolbar</Heading>
     <Header background="dark-1" pad="medium">
       <Box direction="row" align="center" gap="small">

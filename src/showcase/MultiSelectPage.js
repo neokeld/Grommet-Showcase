@@ -23,7 +23,7 @@ export const MultiSelectPage = () => {
   };
 
   return (
-      <Box fill pad="large" gap="medium">
+      <Box pad="large" gap="medium">
 	<Heading>Multiselect</Heading>
         <Select
           options={optionList}

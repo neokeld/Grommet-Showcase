@@ -7,7 +7,7 @@ export const SelectButtonPage = () => {
   const [value, setValue] = useState();
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Selectbutton</Heading>
         <RadioButtonGroup
           name="radio"

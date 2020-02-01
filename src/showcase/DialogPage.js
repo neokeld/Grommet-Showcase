@@ -10,7 +10,7 @@ export const DialogPage = () => {
 
   return (
     <>
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Dialog</Heading>
         <Button
           label="Open"

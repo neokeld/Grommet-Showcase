@@ -6,7 +6,7 @@ export const ProgressBarPage = () => {
   const value = 30;
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Progressbar / LinearProgress</Heading>
         <Meter type="bar" background="light-2" values={[{ value }]} />
       </Box>

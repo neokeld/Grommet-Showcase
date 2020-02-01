@@ -24,7 +24,7 @@ export const CalendarPage = () => {
   };
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Basic Calendar</Heading>
 	<Box width="small">
         <DropButton

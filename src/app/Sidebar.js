@@ -7,7 +7,6 @@ export const Sidebar = (props) => (
     background="light-2"
     elevation="small"
     align="center"
-    justify="center"
     {...props}
   />
 );

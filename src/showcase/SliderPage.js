@@ -8,7 +8,7 @@ export const SliderPage = () => {
   const onChange = event => setValue(event.target.value);
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Slider</Heading>
         <RangeInput value={value} onChange={onChange} />
       </Box>

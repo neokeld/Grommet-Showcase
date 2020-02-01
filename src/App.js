@@ -19,7 +19,7 @@ export const App = () => {
         <Sidebar>
           <SelectionList data={Object.keys(components)} selected={selected} setSelected={setSelected} />
         </Sidebar>
-        <Box flex align="center" justify="center">
+        <Box flex>
 	  {components[selected.item]}
         </Box>
       </Box>

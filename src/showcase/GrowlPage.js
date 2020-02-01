@@ -11,7 +11,7 @@ export const GrowlPage = () => {
 
   return (
     <>
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Growl</Heading>
         <Button
           icon={<Add color="brand" />}

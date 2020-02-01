@@ -9,7 +9,7 @@ export const DropdownPage = (props) => {
   const onChange = ({ option }) => setValue(option);
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Dropdown</Heading>
         <Select
           id="select"

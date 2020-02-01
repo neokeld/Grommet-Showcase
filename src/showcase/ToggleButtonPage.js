@@ -3,7 +3,7 @@ import React from "react";
 import { Box, CheckBox, FormField, Heading } from "grommet";
 
 export const ToggleButtonPage = props => (
-    <Box fill pad="large">
+    <Box pad="large">
       <Heading>Togglebutton</Heading>
       <FormField label="Label" htmlFor="check-box" {...props}>
         <Box pad={{ horizontal: "small", vertical: "xsmall" }}>

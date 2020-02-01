@@ -15,7 +15,7 @@ export const TriStateCheckboxPage = () => {
   };
 
   return (
-    <Box fill pad="large">
+    <Box pad="large">
       <Heading>TriStateCheckbox</Heading>
       <CheckBox
         checked={checked !== "" && checked}

@@ -118,7 +118,7 @@ export const ChipsPage = () => {
     );
 
   return (
-      <Box fill pad="large">
+      <Box pad="large">
 	<Heading>Chips</Heading>
         <TagInput
           placeholder="Search for aliases..."
