@@ -12,6 +12,7 @@ import { DividerPage } from "./DividerPage";
 import { DropdownPage } from "./DropdownPage";
 import { GrowlPage } from "./GrowlPage";
 import { InputSwitchPage } from "./InputSwitchPage";
+import { LabelPage } from "./LabelPage";
 import { ListboxPage } from "./ListboxPage";
 import { MessagesPage } from "./MessagesPage";
 import { MultiSelectPage } from "./MultiSelectPage";
@@ -36,6 +37,7 @@ export const components = {
   "Dropdown" : <DropdownPage/>,
   "Growl" : <GrowlPage/>,
   "InputSwitch" : <InputSwitchPage/>,
+  "Label" : <LabelPage/>,
   "Listbox" : <ListboxPage/>,
   "Messages" : <MessagesPage/>,
   "MultiSelect" : <MultiSelectPage/>,
@@ -47,3 +49,4 @@ export const components = {
   "ToggleButton" : <ToggleButtonPage/>,
   "TriStateCheckbox" : <TriStateCheckboxPage/>,
 };
+
