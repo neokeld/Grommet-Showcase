@@ -2,19 +2,18 @@ import React from "react";
 
 import { Box, List } from "grommet";
 
-export const SelectionList = ({data, selectedIndex, setSelectedIndex}) => {
-
-  return (
+export const SelectionList = ({data, selected, setSelected}) => (
       <Box align="center" pad="large" gap="large">
         <List
           data={data}
           itemProps={
-            selectedIndex >= 0 ? { [selectedIndex]: { background: "brand" } } : undefined
+            selected.index >= 0 ? { [selected.index]: { background: "brand" } } : undefined
           }
-          onClickItem={event =>
-            setSelectedIndex(selectedIndex === event.index ? undefined : event.index)
-          }
+          onClickItem={event => 
+            setSelected({
+	      index: event.index,
+	      item: event.item
+	    })}
         />
       </Box>
-  );
-};
+);

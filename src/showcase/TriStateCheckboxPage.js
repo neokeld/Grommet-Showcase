@@ -18,7 +18,7 @@ export const TriStateCheckboxPage = () => {
     <Box fill pad="large">
       <Heading>TriStateCheckbox</Heading>
       <CheckBox
-        checked={checked}
+        checked={checked !== "" && checked}
         indeterminate={checked === ""}
         label="Choice"
         onChange={onChange}

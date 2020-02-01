@@ -126,7 +126,7 @@ export const AutoCompletePage = () => {
 	  <Text weight="bold">List of folks names:</Text>
 	  {folks.map(
 	    f => (
-	      <Text>{f.name}</Text>
+	      <Text key={f.name}>{f.name}</Text>
 	    )
 	  )}
 	</Box>

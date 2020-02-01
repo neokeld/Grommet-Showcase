@@ -43,7 +43,7 @@ export const CalendarPage = () => {
         />
 	</Box>
 	<Heading>Inline Calendar</Heading>
-	<Calendar date={new Date()} />
+	<Calendar date={new Date().toLocaleDateString()} />
       </Box>
   );
 };
