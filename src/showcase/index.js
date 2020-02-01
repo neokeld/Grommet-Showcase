@@ -8,6 +8,7 @@ import { CheckboxPage } from "./CheckboxPage";
 import { ChipsPage } from "./ChipsPage";
 import { CircularProgressPage } from "./CircularProgressPage";
 import { DialogPage } from "./DialogPage";
+import { DividerPage } from "./DividerPage";
 import { DropdownPage } from "./DropdownPage";
 import { GrowlPage } from "./GrowlPage";
 import { InputSwitchPage } from "./InputSwitchPage";
@@ -31,6 +32,7 @@ export const components = {
   "Chips" : <ChipsPage/>,
   "CircularProgress" : <CircularProgressPage/>,
   "Dialog" : <DialogPage/>,
+  "Divider" : <DividerPage/>,
   "Dropdown" : <DropdownPage/>,
   "Growl" : <GrowlPage/>,
   "InputSwitch" : <InputSwitchPage/>,
