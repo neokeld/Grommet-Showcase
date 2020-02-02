@@ -2,28 +2,30 @@ import React from "react";
 import { Box, Heading, Paragraph, Text } from "grommet";
 
 export const PaperPage = () => (
-  <Box pad="large" gap="medium">
+  <Box pad="large">
     <Heading>Paper</Heading>
-    <Box direction="row" gap="medium">
-      <Box pad="medium" elevation="small" round="small">
-        <Text>Paper with small elevation</Text>
+    <Box gap="medium">
+      <Box direction="row" gap="medium">
+        <Box pad="medium" elevation="small" round="small">
+          <Text>Paper with small elevation</Text>
+        </Box>
+        <Box pad="medium" elevation="medium" round="small">
+          <Text>Paper with medium elevation</Text>
+        </Box>
+        <Box pad="medium" elevation="large" round="small">
+          <Text>Paper with large elevation</Text>
+        </Box>
       </Box>
-      <Box pad="medium" elevation="medium" round="small">
-        <Text>Paper with medium elevation</Text>
-      </Box>
-      <Box pad="medium" elevation="large" round="small">
-        <Text>Paper with large elevation</Text>
-      </Box>
-    </Box>
-    <Box direction="row" gap="medium">
-      <Box pad="medium" elevation="small">
-        <Text>Square with small elevation</Text>
-      </Box>
-      <Box pad="medium" elevation="medium">
-        <Text>Square with medium elevation</Text>
-      </Box>
-      <Box pad="medium" elevation="large">
-        <Text>Square with large elevation</Text>
+      <Box direction="row" gap="medium">
+        <Box pad="medium" elevation="small">
+          <Text>Square with small elevation</Text>
+        </Box>
+        <Box pad="medium" elevation="medium">
+          <Text>Square with medium elevation</Text>
+        </Box>
+        <Box pad="medium" elevation="large">
+          <Text>Square with large elevation</Text>
+        </Box>
       </Box>
     </Box>
     <Heading>Container</Heading>

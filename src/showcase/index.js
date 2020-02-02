@@ -10,12 +10,14 @@ import { CircularProgressPage } from "./CircularProgressPage";
 import { DialogPage } from "./DialogPage";
 import { DividerPage } from "./DividerPage";
 import { DropdownPage } from "./DropdownPage";
+import { FieldSetPage } from "./FieldSetPage";
 import { GrowlPage } from "./GrowlPage";
 import { InputSwitchPage } from "./InputSwitchPage";
 import { LabelPage } from "./LabelPage";
 import { ListboxPage } from "./ListboxPage";
 import { MessagesPage } from "./MessagesPage";
 import { MultiSelectPage } from "./MultiSelectPage";
+import { PanelPage } from "./PanelPage";
 import { PaperPage } from "./PaperPage";
 import { ProgressBarPage } from "./ProgressBarPage";
 import { SelectButtonPage } from "./SelectButtonPage";
@@ -25,28 +27,30 @@ import { ToggleButtonPage } from "./ToggleButtonPage";
 import { TriStateCheckboxPage } from "./TriStateCheckboxPage";
 
 export const components = {
-  "AppBar" : <AppBarPage/>,
-  "AutoComplete" : <AutoCompletePage/>, 
-  "Avatar" : <AvatarPage/>,
-  "Calendar" : <CalendarPage/>,
-  "Checkbox" : <CheckboxPage/>,
-  "Chips" : <ChipsPage/>,
-  "CircularProgress" : <CircularProgressPage/>,
-  "Dialog" : <DialogPage/>,
-  "Divider" : <DividerPage/>,
-  "Dropdown" : <DropdownPage/>,
-  "Growl" : <GrowlPage/>,
-  "InputSwitch" : <InputSwitchPage/>,
-  "Label" : <LabelPage/>,
-  "Listbox" : <ListboxPage/>,
-  "Messages" : <MessagesPage/>,
-  "MultiSelect" : <MultiSelectPage/>,
-  "PaperPage" : <PaperPage/>,
-  "ProgressBar" : <ProgressBarPage/>,
-  "SelectButton" : <SelectButtonPage/>,
-  "Slider" : <SliderPage/>,
+  "AppBar": <AppBarPage/>,
+  "AutoComplete": <AutoCompletePage/>, 
+  "Avatar": <AvatarPage/>,
+  "Calendar": <CalendarPage/>,
+  "Checkbox": <CheckboxPage/>,
+  "Chips": <ChipsPage/>,
+  "CircularProgress": <CircularProgressPage/>,
+  "Dialog": <DialogPage/>,
+  "Divider": <DividerPage/>,
+  "Dropdown": <DropdownPage/>,
+  "FieldSet": <FieldSetPage/>,
+  "Growl": <GrowlPage/>,
+  "InputSwitch": <InputSwitchPage/>,
+  "Label": <LabelPage/>,
+  "Listbox": <ListboxPage/>,
+  "Messages": <MessagesPage/>,
+  "MultiSelect": <MultiSelectPage/>,
+  "PanelPage": <PanelPage/>,
+  "PaperPage": <PaperPage/>,
+  "ProgressBar": <ProgressBarPage/>,
+  "SelectButton": <SelectButtonPage/>,
+  "Slider": <SliderPage/>,
   "Sort": <SortPage/>,
-  "ToggleButton" : <ToggleButtonPage/>,
-  "TriStateCheckbox" : <TriStateCheckboxPage/>,
+  "ToggleButton": <ToggleButtonPage/>,
+  "TriStateCheckbox": <TriStateCheckboxPage/>,
 };
 
