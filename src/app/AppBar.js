@@ -1,16 +1,12 @@
 import React from "react";
-import { Box, Heading } from "grommet";
+import { Anchor, Header, Heading } from "grommet";
+import { Github } from "grommet-icons";
 
 const Bar = (props) => (
-  <Box
-    tag="header"
-    direction="row"
-    align="center"
-    justify="between"
+  <Header
     background="brand"
     pad={{ left: "medium", right: "small", vertical: "small" }}
     elevation="medium"
-    style={{ zIndex: "1" }}
     {...props}
   />
 );
@@ -18,5 +14,10 @@ const Bar = (props) => (
 export const AppBar = (props) => (
   <Bar {...props}>
     <Heading level="3" margin="none">Grommet-Showcase</Heading>
+    <Anchor
+	href="https://github.com/neokeld/Grommet-Showcase"
+	icon={<Github size="36px" />}
+    />
   </Bar>
 );
+
