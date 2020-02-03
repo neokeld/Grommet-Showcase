@@ -1,6 +1,12 @@
 import React from "react";
-import { Anchor, Header, Heading } from "grommet";
+import { Anchor, Box, Header, Heading, Image } from "grommet";
 import { Github } from "grommet-icons";
+
+const Logo = ({size}) => (
+  <Box height={size} width="xsmall">
+    <Image fit="contain" src="https://blog.dema.in/i/logo.svg" />
+  </Box> 
+);
 
 const Bar = (props) => (
   <Header
@@ -14,10 +20,17 @@ const Bar = (props) => (
 export const AppBar = (props) => (
   <Bar {...props}>
     <Heading level="3" margin="none">Grommet-Showcase</Heading>
-    <Anchor
+    <Box direction="row">
+      <Anchor
+	href="https://blog.dema.in"
+	icon={<Logo size="36px" />}
+      />
+      <Anchor
 	href="https://github.com/neokeld/Grommet-Showcase"
 	icon={<Github size="36px" />}
-    />
+	color="light-1"
+      />
+    </Box>
   </Bar>
 );
 
