@@ -3,7 +3,7 @@ import { Box } from "grommet";
 
 export const Sidebar = (props) => (
   <Box
-    width="medium"
+    pad ="medium"
     background="light-2"
     elevation="small"
     align="center"
