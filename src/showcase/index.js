@@ -1,5 +1,7 @@
 import React from "react";
 
+import { LandingPage } from "../app/LandingPage";
+
 import { AppBarPage } from "./AppBarPage";
 import { AutoCompletePage } from "./AutoCompletePage";
 import { AvatarPage } from "./AvatarPage";
@@ -27,6 +29,7 @@ import { ToggleButtonPage } from "./ToggleButtonPage";
 import { TriStateCheckboxPage } from "./TriStateCheckboxPage";
 
 export const components = {
+  "LandingPage": <LandingPage/>,
   "AppBar": <AppBarPage/>,
   "AutoComplete": <AutoCompletePage/>, 
   "Avatar": <AvatarPage/>,
