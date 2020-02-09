@@ -14,7 +14,7 @@ export const AppBarPage = () => (
     <Header background="dark-1" pad="medium">
       <Box direction="row" align="center" gap="small">
         <Avatar />
-        <Anchor color="white" href="https://blog.dema.in">
+        <Anchor color="white" href="#">
           Montaigne
         </Anchor>
       </Box>
