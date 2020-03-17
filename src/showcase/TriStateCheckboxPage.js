@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Box, CheckBox, Heading, Text } from "grommet";
+import { Box, CheckBox, Heading, Paragraph } from "grommet";
 
 export const TriStateCheckboxPage = () => {
 
-  const [checked, setChecked] = useState("");
+  const INDETERMINATE = "indeterminate";
+  const [checked, setChecked] = useState(INDETERMINATE);
   const onChange = event => {
-    if(checked === "") {
+    if(checked === INDETERMINATE) {
       setChecked(true);
     } else if (checked) {
       setChecked(false);
     } else {
-      setChecked("");
+      setChecked(INDETERMINATE);
     }
   };
 
@@ -18,15 +19,16 @@ export const TriStateCheckboxPage = () => {
     <Box pad="large">
       <Heading>TriStateCheckbox</Heading>
       <CheckBox
-        checked={checked !== "" && checked}
-        indeterminate={checked === ""}
+        checked={checked === true}
+        indeterminate={checked === INDETERMINATE}
         label="Choice"
         onChange={onChange}
       />
-      <Text>Checkbox value: {checked !== "" ?
-		               checked ? "true" :
-		                 "false"
-		             : "empty" }</Text>
+      <Paragraph>Checkbox value: {checked !== INDETERMINATE
+                              ? checked
+                                ? "true"
+                                : "false"
+                              : INDETERMINATE}</Paragraph>
     </Box>
   );
 };
