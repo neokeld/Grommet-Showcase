@@ -1,34 +1,31 @@
 import React, { useState } from "react";
-import { Box, CheckBox, Heading, Paragraph } from "grommet";
+import { Box, Heading, Text } from "grommet";
+
+import { TriStateCheckbox, INDETERMINATE } from "../lib/TriStateCheckbox";
 
 export const TriStateCheckboxPage = () => {
 
-  const INDETERMINATE = "indeterminate";
   const [checked, setChecked] = useState(INDETERMINATE);
-  const onChange = event => {
-    if(checked === INDETERMINATE) {
-      setChecked(true);
-    } else if (checked) {
-      setChecked(false);
+  const onChange = value => {
+    if(value === INDETERMINATE) {
+        setChecked("indeterminate");
+    } else if (value) {
+        setChecked("true");
     } else {
-      setChecked(INDETERMINATE);
-    }
+        setChecked("false");
+    } 
   };
 
   return (
     <Box pad="large">
       <Heading>TriStateCheckbox</Heading>
-      <CheckBox
-        checked={checked === true}
-        indeterminate={checked === INDETERMINATE}
-        label="Choice"
-        onChange={onChange}
-      />
-      <Paragraph>Checkbox value: {checked !== INDETERMINATE
-                              ? checked
-                                ? "true"
-                                : "false"
-                              : INDETERMINATE}</Paragraph>
+      <TriStateCheckbox label="Choice"
+	  onChange={onChange} />
+      <Text>Checkbox value: {checked}</Text>
+      <Text>TriStateCheckbox has default initial value: indeterminate</Text>
+      <Heading>TriStateCheckbox with initial value: true</Heading>
+      <TriStateCheckbox label="Choice"
+	  initialValue={true} />
     </Box>
   );
 };
