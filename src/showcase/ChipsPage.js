@@ -1,33 +1,10 @@
 import React from "react";
 
-import { Box, Button, Heading, Keyboard, Text, TextInput } from "grommet";
-import { FormClose } from "grommet-icons";
+import { Box, Heading, Keyboard, TextInput } from "grommet";
+
+import { Tag } from "../lib/Tag";
 
 const allSuggestions = ["baguette", "vin", "béret", "chocolatine"];
-
-const Tag = ({ children, onRemove, ...rest }) => {
-  const tag = (
-    <Box
-      direction="row"
-      align="center"
-      background="brand"
-      pad={{ horizontal: "xsmall", vertical: "xxsmall" }}
-      margin={{ vertical: "xxsmall" }}
-      round="medium"
-      {...rest}
-    >
-      <Text size="xsmall" margin={{ right: "xxsmall" }}>
-        {children}
-      </Text>
-      {onRemove && <FormClose size="small" color="white" />}
-    </Box>
-  );
-
-  if (onRemove) {
-    return <Button onClick={onRemove}>{tag}</Button>;
-  }
-  return tag;
-};
 
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState("");
@@ -60,6 +37,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
         margin="xxsmall"
         key={`${v}${index + 0}`}
         onRemove={() => onRemove(v)}
+	round="medium"
       >
         {v}
       </Tag>
