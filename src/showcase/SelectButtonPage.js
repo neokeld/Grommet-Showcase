@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import { Box, Heading, RadioButtonGroup } from "grommet";
-import { Ascend, Descend } from "grommet-icons";
+import { Box, Heading, Text } from "grommet";
+
+import { SelectButton } from "../lib/SelectButton";
 
 export const SelectButtonPage = () => {
   const [value, setValue] = useState();
@@ -9,27 +10,11 @@ export const SelectButtonPage = () => {
   return (
       <Box pad="large">
 	<Heading>Selectbutton</Heading>
-        <RadioButtonGroup
-          name="radio"
-          direction="row"
-          gap="xsmall"
-          options={["asc", "desc"]}
+        <SelectButton
           value={value}
           onChange={event => setValue(event.target.value)}
-        >
-          {(option, { checked, hover }) => {
-            const Icon = option === "asc" ? Ascend : Descend;
-            let background;
-            if (checked) background = "brand";
-            else if (hover) background = "light-4";
-            else background = "light-2";
-            return (
-              <Box background={background} pad="xsmall">
-                <Icon />
-              </Box>
-            );
-          }}
-        </RadioButtonGroup>
+        />
+	<Text>Select button value: {value}</Text>
       </Box>
   );
 };
