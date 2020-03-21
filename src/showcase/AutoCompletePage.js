@@ -27,7 +27,22 @@ const folks = [
   }
 ];
 
-export const AutoCompletePage = () => {
+const Suggestion = ({name, index, list}) => (
+          <Box
+            direction="row"
+            align="center"
+            gap="small"
+            border={index < list.length - 1 ? "bottom" : undefined}
+            pad="small"
+          >
+            <Text>
+              <strong>{name}</strong>
+            </Text>
+          </Box>
+
+);
+
+const AutoComplete = ({folks}) => {
   const [value, setValue] = useState("");
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestedFolks, setSuggestedFolks] = useState([]);
@@ -57,37 +72,22 @@ export const AutoCompletePage = () => {
 
   const renderSuggestions = () => {
     return suggestedFolks
-      .filter(
-        ({ name }) => {
-	  const normalized_name = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-	  const normalized_value = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-	  return normalized_name.indexOf(normalized_value) >= 0;
-	}
-      )
+      .filter(({ name }) => {
+        const normalized_name = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const normalized_value = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        return normalized_name.indexOf(normalized_value) >= 0;
+})
       .map(({ name }, index, list) => ({
-        label: (
-          <Box
-            direction="row"
-            align="center"
-            gap="small"
-            border={index < list.length - 1 ? "bottom" : undefined}
-            pad="small"
-          >
-            <Text>
-              <strong>{name}</strong>
-            </Text>
-          </Box>
-        ),
+        label: (<Suggestion
+		  name={name}
+		  index={index}
+		  list={list} />),
         value: name
       }));
   };
 
   return (
-      <Box fill align="center">
-        <Box fill="horizontal" pad="large">
-	  <Heading>AutoComplete</Heading>
-	</Box>
-        <Box
+          <Box
           ref={boxRef}
           width="large"
           direction="row"
@@ -122,6 +122,17 @@ export const AutoCompletePage = () => {
             onSuggestionsClose={() => setSuggestionOpen(false)}
           />
         </Box>
+
+  );
+};
+
+export const AutoCompletePage = () => {
+  return (
+      <Box fill align="center">
+        <Box fill="horizontal" pad="large">
+	  <Heading>AutoComplete</Heading>
+	</Box>
+	<AutoComplete folks={folks} />
 	<Box fill pad="large">
 	  <Text weight="bold">List of folks names:</Text>
 	  {folks.map(
