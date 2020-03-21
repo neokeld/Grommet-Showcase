@@ -6,22 +6,13 @@ const BasicCheckBox = () => {
   const onChange = event => setChecked(event.target.checked);
 
   return (
-        <CheckBox label="Choice" checked={checked} onChange={onChange} />
+    <CheckBox label="Choice" checked={checked} onChange={onChange} />
   );
 };
 
-const IndeterminateCheckBox = () => {
-  const [checked, setChecked] = useState([]);
-  const checkboxes = ["fruits", "vegetables", "olive oil"];
+const checkboxes = ["fruits", "vegetables", "olive oil"];
 
-  const onCheckAll = event => {
-    if (event.target.checked) {
-      setChecked(checkboxes);
-    } else {
-      setChecked([]);
-    }
-  };
-
+const CheckboxesList = ({ checkboxes, checked, setChecked }) => {
   const onCheck = (event, value) => {
     if (event.target.checked) {
       setChecked([...checked, value]);
@@ -31,21 +22,43 @@ const IndeterminateCheckBox = () => {
   };
 
   return (
+    <Box direction="row" gap="medium">
+      {checkboxes.map(item => (
+        <CheckBox
+          key={item}
+          checked={checked.includes(item)}
+          label={item}
+          onChange={e => onCheck(e, item)}
+        />
+      ))}
+    </Box>
+  );
+};
+
+const IndeterminateCheckBox = ({ checkboxes }) => {
+  const [checked, setChecked] = useState([]);
+
+  const onCheckAll = event => {
+    if (event.target.checked) {
+      setChecked(checkboxes);
+    } else {
+      setChecked([]);
+    }
+  };
+
+  return (
         <Box direction="row" gap="medium">
           <CheckBox
-            checked={checked.length === 3}
-            indeterminate={checked.length > 0 && checked.length < 3}
+            checked={checked.length === checkboxes.length}
+            indeterminate={checked.length > 0 && checked.length < checkboxes.length}
             label="All"
             onChange={onCheckAll}
           />
-          {checkboxes.map(item => (
-            <CheckBox
-              key={item}
-              checked={checked.includes(item)}
-              label={item}
-              onChange={e => onCheck(e, item)}
-            />
-          ))}
+          <CheckboxesList
+	    checkboxes={checkboxes}
+	    checked={checked}
+	    setChecked={setChecked}
+	  />
         </Box>
   );
 };
@@ -56,7 +69,8 @@ export const CheckboxPage = () => {
       <Heading>Single Checkbox</Heading>
       <BasicCheckBox />
       <Heading>Multiple Checkboxes</Heading>
-      <IndeterminateCheckBox />
+      <IndeterminateCheckBox checkboxes={checkboxes} />
     </Box>
   );
 };
+
