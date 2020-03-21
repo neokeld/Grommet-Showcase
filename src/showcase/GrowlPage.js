@@ -1,7 +1,9 @@
 import React from "react";
 
-import { Add, FormClose, StatusGood } from "grommet-icons";
-import { Box, Button, Heading, Layer, Text } from "grommet";
+import { Add, StatusGood } from "grommet-icons";
+import { Box, Button, Heading, Text } from "grommet";
+
+import { Growl } from "../lib/Growl";
 
 export const GrowlPage = () => {
   const [open, setOpen] = React.useState();
@@ -20,31 +22,13 @@ export const GrowlPage = () => {
         />
       </Box>
       {open && (
-        <Layer
+        <Growl
           position="bottom"
-          modal={false}
-          margin="medium"
-          onEsc={onClose}
-          responsive={false}
-          plain
+          onClose={onClose}
         >
-          <Box
-            align="center"
-            direction="row"
-            gap="small"
-            justify="between"
-            round="small"
-            elevation="medium"
-            pad="small"
-            background="brand"
-          >
-            <Box align="center" direction="row" gap="xsmall">
-              <StatusGood />
-              <Text>A new growl has been successfully opened</Text>
-            </Box>
-            <Button icon={<FormClose />} onClick={onClose} plain />
-          </Box>
-        </Layer>
+          <StatusGood />
+          <Text>A new growl has been successfully opened</Text>
+        </Growl>
       )}
     </>
   );
