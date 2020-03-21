@@ -1,6 +1,8 @@
 import React from "react";
 
-import { Box, Button, Heading, Layer, Text } from "grommet";
+import { Box, Button, Heading, Text } from "grommet";
+
+import { Dialog } from "../lib/Dialog";
 
 export const DialogPage = () => {
   const [open, setOpen] = React.useState();
@@ -18,28 +20,12 @@ export const DialogPage = () => {
         />
       </Box>
       {open && (
-        <Layer position="center" modal onClickOutside={onClose} onEsc={onClose}>
-          <Box pad="medium" gap="small" width="medium">
+        <Dialog onClose={onClose}>
             <Heading level={3} margin="none">
               Confirm
             </Heading>
             <Text>Are you sure you want to close this dialog?</Text>
-            <Box
-              as="footer"
-              gap="small"
-              direction="row"
-              align="center"
-              justify="end"
-              pad={{ top: "medium", bottom: "small" }}
-            >
-              <Button
-                label="Close"
-                onClick={onClose}
-                primary
-              />
-            </Box>
-          </Box>
-        </Layer>
+        </Dialog>
       )}
     </>
   );
