@@ -6,6 +6,21 @@ import { Tag } from "../lib/Tag";
 
 const allSuggestions = ["baguette", "vin", "béret", "chocolatine"];
 
+const TagList = ({ value, onRemove }) => (
+  <>
+    {value.map((v, index) => (
+      <Tag
+        margin="xxsmall"
+        key={`${v}${index + 0}`}
+        onRemove={() => onRemove(v)}
+	round="medium"
+      >
+        {v}
+      </Tag>
+    ))}
+  </>
+);
+
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState("");
   const [box, setBox] = React.useState();
@@ -31,18 +46,6 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
     }
   };
 
-  const renderValue = () =>
-    value.map((v, index) => (
-      <Tag
-        margin="xxsmall"
-        key={`${v}${index + 0}`}
-        onRemove={() => onRemove(v)}
-	round="medium"
-      >
-        {v}
-      </Tag>
-    ));
-
   return (
     <Keyboard onEnter={onEnter}>
       <Box
@@ -53,7 +56,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
         ref={boxRef}
         wrap
       >
-        {value.length > 0 && renderValue()}
+        {value.length > 0 && <TagList value={value} onRemove={onRemove} />}
         <Box flex style={{ minWidth: "120px" }}>
           <TextInput
             type="search"
