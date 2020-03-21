@@ -73,27 +73,30 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   );
 };
 
-export const ChipsPage = () => {
-  const [selectedTags, setSelectedTags] = React.useState(["baguette", "vin"]);
-  const [suggestions, setSuggestions] = React.useState(allSuggestions);
-
-  const onRemoveTag = tag => {
+const removeTag = (selectedTags, tag) => {
     const removeIndex = selectedTags.indexOf(tag);
     const newTags = [...selectedTags];
     if (removeIndex >= 0) {
       newTags.splice(removeIndex, 1);
     }
-    setSelectedTags(newTags);
+    return newTags;
+};
+
+export const ChipsPage = () => {
+  const [selectedTags, setSelectedTags] = React.useState(["baguette", "vin"]);
+  const [suggestions, setSuggestions] = React.useState(allSuggestions);
+
+  const onRemoveTag = tag => {
+    setSelectedTags(removeTag(selectedTags, tag));
   };
 
   const onAddTag = tag => setSelectedTags([...selectedTags, tag]);
 
-  const onFilterSuggestion = value =>
-    setSuggestions(
-      allSuggestions.filter(
-        suggestion => suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0
-      )
-    );
+  const onFilterSuggestion = value => setSuggestions(
+    allSuggestions.filter(
+      suggestion => suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0
+    )
+  );
 
   return (
       <Box pad="large">

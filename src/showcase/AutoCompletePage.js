@@ -42,6 +42,37 @@ const Suggestion = ({name, index, list}) => (
 
 );
 
+const SearchBar = ({boxRef, suggestionOpen, children}) => {
+  const pad = { horizontal: "small", vertical: "xsmall" };
+  const border = {
+    side: "all",
+    color: suggestionOpen ? "transparent" : "border"
+  };
+
+  return (
+    <Box
+      ref={boxRef}
+      width="large"
+      direction="row"
+      align="center"
+      pad={pad}
+      round="small"
+      elevation={suggestionOpen ? "medium" : undefined}
+      border={border}
+      style={
+        suggestionOpen
+          ? {
+              borderBottomLeftRadius: "0px",
+              borderBottomRightRadius: "0px"
+            }
+          : undefined
+      }
+    >
+    {children}
+    </Box>
+  );
+};
+
 const AutoComplete = ({folks}) => {
   const [value, setValue] = useState("");
   const [suggestionOpen, setSuggestionOpen] = useState(false);
@@ -87,41 +118,24 @@ const AutoComplete = ({folks}) => {
   };
 
   return (
-          <Box
-          ref={boxRef}
-          width="large"
-          direction="row"
-          align="center"
-          pad={{ horizontal: "small", vertical: "xsmall" }}
-          round="small"
-          elevation={suggestionOpen ? "medium" : undefined}
-          border={{
-            side: "all",
-            color: suggestionOpen ? "transparent" : "border"
-          }}
-          style={
-            suggestionOpen
-              ? {
-                  borderBottomLeftRadius: "0px",
-                  borderBottomRightRadius: "0px"
-                }
-              : undefined
-          }
-        >
-          <Search color="brand" />
-          <TextInput
-            type="search"
-            dropTarget={boxRef.current}
-            plain
-            value={value}
-            onChange={onChange}
-            onSelect={onSelect}
-            suggestions={renderSuggestions()}
-            placeholder="Enter your name..."
-            onSuggestionsOpen={() => setSuggestionOpen(true)}
-            onSuggestionsClose={() => setSuggestionOpen(false)}
-          />
-        </Box>
+    <SearchBar
+      boxRef={boxRef}
+      suggestionOpen={suggestionOpen}
+    >
+      <Search color="brand" />
+      <TextInput
+        type="search"
+        dropTarget={boxRef.current}
+        plain
+        value={value}
+        onChange={onChange}
+        onSelect={onSelect}
+        suggestions={renderSuggestions()}
+        placeholder="Enter your name..."
+        onSuggestionsOpen={() => setSuggestionOpen(true)}
+        onSuggestionsClose={() => setSuggestionOpen(false)}
+      />
+    </SearchBar>
 
   );
 };
