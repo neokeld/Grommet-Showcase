@@ -11,6 +11,7 @@ export const Sort = (props) => {
 	                                 ascCompare) , direction: "asc"});
   const setDesc = () => setSort({options: props.options.sort(
 	                                 descCompare) , direction: "desc"});
+  const color = (direction) => sort.direction === direction ? 'brand' : undefined; 
 
   return (
       <Box direction='row' justify='start' align='center'
@@ -19,11 +20,11 @@ export const Sort = (props) => {
         <Box direction='row' flex={false} responsive={false} align='center'>
           <Button
             icon={<Ascend
-                color={sort.direction === 'asc' ? 'brand' : undefined} />}
+                color={color('asc')} />}
             onClick={setAsc} />
           <Button
             icon={<Descend
-                color={sort.direction === 'desc' ? 'brand' : undefined} />}
+                color={color('desc')} />}
             onClick={setDesc} />
         </Box>
       </Box>
