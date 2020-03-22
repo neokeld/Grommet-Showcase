@@ -35,7 +35,7 @@ const SearchInput = ({ onAddTag, ...rest }) => (
   </Box>
 );
 
-const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
+const TagInput = ({ value = [], onAdd = () => {}, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState("");
   const [box, setBox] = React.useState();
   const boxRef = React.useCallback(setBox, []);
@@ -47,15 +47,9 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
     }
   };
 
-  const onAddTag = tag => {
-    if (onAdd) {
-      onAdd(tag);
-    }
-  };
-
   const onEnter = () => {
     if (currentTag.length) {
-      onAddTag(currentTag);
+      onAdd(currentTag);
       setCurrentTag("");
     }
   };
@@ -71,7 +65,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
         wrap
       >
         <TagList value={value} onRemove={onRemove} />
-        <SearchInput onAddTag={onAddTag} dropTarget={box} onChange={updateCurrentTag} value={currentTag} {...rest} />
+        <SearchInput onAddTag={onAdd} dropTarget={box} onChange={updateCurrentTag} value={currentTag} {...rest} />
       </Box>
     </Keyboard>
   );
