@@ -21,6 +21,20 @@ const TagList = ({ value, onRemove }) => (
   </>
 );
 
+const SearchInput = ({ onAddTag, ...rest }) => (
+  <Box flex style={{ minWidth: "120px" }}>
+    <TextInput
+      type="search"
+      plain
+      {...rest}
+      onSelect={event => {
+        event.stopPropagation();
+        onAddTag(event.suggestion);
+      }}
+    />
+  </Box>
+);
+
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   const [currentTag, setCurrentTag] = React.useState("");
   const [box, setBox] = React.useState();
@@ -56,21 +70,8 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
         ref={boxRef}
         wrap
       >
-        {value.length > 0 && <TagList value={value} onRemove={onRemove} />}
-        <Box flex style={{ minWidth: "120px" }}>
-          <TextInput
-            type="search"
-            plain
-            dropTarget={box}
-            {...rest}
-            onChange={updateCurrentTag}
-            value={currentTag}
-            onSelect={event => {
-              event.stopPropagation();
-              onAddTag(event.suggestion);
-            }}
-          />
-        </Box>
+        <TagList value={value} onRemove={onRemove} />
+        <SearchInput onAddTag={onAddTag} dropTarget={box} onChange={updateCurrentTag} value={currentTag} {...rest} />
       </Box>
     </Keyboard>
   );
