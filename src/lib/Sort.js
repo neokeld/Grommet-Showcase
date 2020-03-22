@@ -5,12 +5,12 @@ import { Ascend, Descend } from 'grommet-icons';
 export const Sort = (props) => {
 
   const [sort, setSort] = React.useState(props.options);
+  const ascCompare = (a, b)=>a.localeCompare(b);
+  const descCompare = (a, b)=>b.localeCompare(a);
   const setAsc = () => setSort({options: props.options.sort(
-	  (a, b)=>a.localeCompare(b)
-                               ) , direction: "asc"});
+	                                 ascCompare) , direction: "asc"});
   const setDesc = () => setSort({options: props.options.sort(
-	  (a, b)=>b.localeCompare(a)
-                               ) , direction: "desc"});
+	                                 descCompare) , direction: "desc"});
 
   return (
       <Box direction='row' justify='start' align='center'
