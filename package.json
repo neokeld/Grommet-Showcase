@@ -14,6 +14,7 @@
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^10.0.1",
     "@testing-library/user-event": "^10.0.0",
+    "codecov": "^3.6.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "prettier": "^2.0.2",
@@ -27,7 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/",
-    "coverage": "react-scripts test --coverage"
+    "coverage": "react-scripts test --coverage",
+    "report-coverage": "codecov"
   },
   "eslintConfig": {
     "extends": "react-app"

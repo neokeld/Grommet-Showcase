@@ -13,8 +13,7 @@ script:
   - yarn build
   - yarn test
 after_success:
-  - yarn global install codecov
-  - yarn coverage && codecov
+  - yarn coverage && yarn report-coverage
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
