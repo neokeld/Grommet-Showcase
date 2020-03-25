@@ -1,6 +1,6 @@
-import React from "react";
-import { Box, Button, Text } from "grommet";
-import { FormClose } from "grommet-icons";
+import React from 'react';
+import { Box, Button, Text } from 'grommet';
+import { FormClose } from 'grommet-icons';
 
 export const Tag = ({ children, onRemove, ...rest }) => {
   const tag = (
@@ -8,11 +8,11 @@ export const Tag = ({ children, onRemove, ...rest }) => {
       direction="row"
       align="center"
       background="brand"
-      pad={{ horizontal: "xsmall", vertical: "xxsmall" }}
-      margin={{ vertical: "xxsmall" }}
+      pad={{ horizontal: 'xsmall', vertical: 'xxsmall' }}
+      margin={{ vertical: 'xxsmall' }}
       {...rest}
     >
-      <Text size="xsmall" margin={{ right: "xxsmall" }}>
+      <Text size="xsmall" margin={{ right: 'xxsmall' }}>
         {children}
       </Text>
       {onRemove && <FormClose size="small" color="white" />}
@@ -24,4 +24,3 @@ export const Tag = ({ children, onRemove, ...rest }) => {
   }
   return tag;
 };
-

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   Button,
@@ -8,9 +8,9 @@ import {
   Heading,
   RadioButtonGroup,
   Select,
-  Text
-} from "grommet";
-import styled from "styled-components";
+  Text,
+} from 'grommet';
+import styled from 'styled-components';
 
 const FieldSet = styled.fieldset``;
 const Legend = styled.legend``;
@@ -23,43 +23,33 @@ export const FieldSetPage = () => (
     <Heading>FieldSet</Heading>
     <Box width="medium">
       <Form
-        onReset={event => console.log(event)}
-        onSubmit={({ value, touched }) =>
-          console.log("Submit", value, touched)
-        }
+        onReset={(event) => console.log(event)}
+        onSubmit={({ value, touched }) => console.log('Submit', value, touched)}
       >
         <FieldSet>
-	  <Legend>Simple FieldSet</Legend>
-          <FormField
-            label="Name"
-            name="name"
-            required
-          />
+          <Legend>Simple FieldSet</Legend>
+          <FormField label="Name" name="name" required />
           <FormField label="Email" name="email" type="email" required />
         </FieldSet>
         <StyledFieldSet>
-	  <Legend>
-	    <Text>Styled FieldSet</Text>
-	  </Legend>
-          <FormField
-            name="subscribe"
-            component={CheckBox}
-            label="Subscribe?"
-          />
+          <Legend>
+            <Text>Styled FieldSet</Text>
+          </Legend>
+          <FormField name="subscribe" component={CheckBox} label="Subscribe?" />
           <FormField
             name="ampm"
             component={RadioButtonGroup}
-            options={["morning", "evening"]}
+            options={['morning', 'evening']}
           />
           <FormField
             label="Size"
             name="size"
             component={Select}
-            onChange={event => console.log(event)}
-            options={["small", "medium", "large", "xlarge"]}
+            onChange={(event) => console.log(event)}
+            options={['small', 'medium', 'large', 'xlarge']}
           />
         </StyledFieldSet>
-        <Box direction="row" justify="between" margin={{ top: "medium" }}>
+        <Box direction="row" justify="between" margin={{ top: 'medium' }}>
           <Button label="Cancel" />
           <Button type="reset" label="Reset" />
           <Button type="submit" label="Update" primary />
@@ -68,4 +58,3 @@ export const FieldSetPage = () => (
     </Box>
   </Box>
 );
-

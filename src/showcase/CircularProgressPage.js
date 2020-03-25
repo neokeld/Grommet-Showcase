@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 
-import { Box, Heading, Meter } from "grommet";
+import { Box, Heading, Meter } from 'grommet';
 
 export const CircularProgressPage = () => {
   const [value, setValue] = useState(20);
@@ -18,14 +18,13 @@ export const CircularProgressPage = () => {
   }, []);
 
   return (
-      <Box pad="large">
-	<Heading>CircularProgress</Heading>
-        <Meter
-          type="circle"
-          background="light-2"
-          values={[{ value, color: value > 50 ? "brand" : "accent-1" }]}
-        />
-      </Box>
+    <Box pad="large">
+      <Heading>CircularProgress</Heading>
+      <Meter
+        type="circle"
+        background="light-2"
+        values={[{ value, color: value > 50 ? 'brand' : 'accent-1' }]}
+      />
+    </Box>
   );
 };
-

@@ -1,11 +1,11 @@
-import React from "react";
-import { Anchor, Box, Header, Heading, Nav } from "grommet";
-import { Avatar } from "../lib/Avatar";
+import React from 'react';
+import { Anchor, Box, Header, Heading, Nav } from 'grommet';
+import { Avatar } from '../lib/Avatar';
 
 const items = [
-  { label: "HTML", href: "#" },
-  { label: "JS", href: "#" },
-  { label: "REACT", href: "#" }
+  { label: 'HTML', href: '#' },
+  { label: 'JS', href: '#' },
+  { label: 'REACT', href: '#' },
 ];
 
 export const AppBarPage = () => (
@@ -19,7 +19,7 @@ export const AppBarPage = () => (
         </Anchor>
       </Box>
       <Nav direction="row">
-        {items.map(item => (
+        {items.map((item) => (
           <Anchor href={item.href} label={item.label} key={item.label} />
         ))}
       </Nav>

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Heading, Keyboard, TextInput } from "grommet";
+import { Box, Heading, Keyboard, TextInput } from 'grommet';
 
-import { Tag } from "../lib/Tag";
+import { Tag } from '../lib/Tag';
 
-const allSuggestions = ["baguette", "vin", "béret", "chocolatine"];
+const allSuggestions = ['baguette', 'vin', 'béret', 'chocolatine'];
 
 const TagList = ({ value, onRemove }) => (
   <>
@@ -13,7 +13,7 @@ const TagList = ({ value, onRemove }) => (
         margin="xxsmall"
         key={`${v}${index + 0}`}
         onRemove={() => onRemove(v)}
-	round="medium"
+        round="medium"
       >
         {v}
       </Tag>
@@ -22,12 +22,12 @@ const TagList = ({ value, onRemove }) => (
 );
 
 const SearchInput = ({ onAddTag, ...rest }) => (
-  <Box flex style={{ minWidth: "120px" }}>
+  <Box flex style={{ minWidth: '120px' }}>
     <TextInput
       type="search"
       plain
       {...rest}
-      onSelect={event => {
+      onSelect={(event) => {
         event.stopPropagation();
         onAddTag(event.suggestion);
       }}
@@ -35,12 +35,18 @@ const SearchInput = ({ onAddTag, ...rest }) => (
   </Box>
 );
 
-const TagInput = ({ value = [], onAdd = () => {}, onChange, onRemove, ...rest }) => {
-  const [currentTag, setCurrentTag] = React.useState("");
+const TagInput = ({
+  value = [],
+  onAdd = () => {},
+  onChange,
+  onRemove,
+  ...rest
+}) => {
+  const [currentTag, setCurrentTag] = React.useState('');
   const [box, setBox] = React.useState();
   const boxRef = React.useCallback(setBox, []);
 
-  const updateCurrentTag = event => {
+  const updateCurrentTag = (event) => {
     setCurrentTag(event.target.value);
     if (onChange) {
       onChange(event);
@@ -50,7 +56,7 @@ const TagInput = ({ value = [], onAdd = () => {}, onChange, onRemove, ...rest })
   const onEnter = () => {
     if (currentTag.length) {
       onAdd(currentTag);
-      setCurrentTag("");
+      setCurrentTag('');
     }
   };
 
@@ -59,54 +65,62 @@ const TagInput = ({ value = [], onAdd = () => {}, onChange, onRemove, ...rest })
       <Box
         direction="row"
         align="center"
-        pad={{ horizontal: "xsmall" }}
+        pad={{ horizontal: 'xsmall' }}
         border="all"
         ref={boxRef}
         wrap
       >
         <TagList value={value} onRemove={onRemove} />
-        <SearchInput onAddTag={onAdd} dropTarget={box} onChange={updateCurrentTag} value={currentTag} {...rest} />
+        <SearchInput
+          onAddTag={onAdd}
+          dropTarget={box}
+          onChange={updateCurrentTag}
+          value={currentTag}
+          {...rest}
+        />
       </Box>
     </Keyboard>
   );
 };
 
 const removeTag = (selectedTags, tag) => {
-    const removeIndex = selectedTags.indexOf(tag);
-    const newTags = [...selectedTags];
-    if (removeIndex >= 0) {
-      newTags.splice(removeIndex, 1);
-    }
-    return newTags;
+  const removeIndex = selectedTags.indexOf(tag);
+  const newTags = [...selectedTags];
+  if (removeIndex >= 0) {
+    newTags.splice(removeIndex, 1);
+  }
+  return newTags;
 };
 
 export const ChipsPage = () => {
-  const [selectedTags, setSelectedTags] = React.useState(["baguette", "vin"]);
+  const [selectedTags, setSelectedTags] = React.useState(['baguette', 'vin']);
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
 
-  const onRemoveTag = tag => {
+  const onRemoveTag = (tag) => {
     setSelectedTags(removeTag(selectedTags, tag));
   };
 
-  const onAddTag = tag => setSelectedTags([...selectedTags, tag]);
+  const onAddTag = (tag) => setSelectedTags([...selectedTags, tag]);
 
-  const onFilterSuggestion = value => setSuggestions(
-    allSuggestions.filter(
-      suggestion => suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0
-    )
-  );
+  const onFilterSuggestion = (value) =>
+    setSuggestions(
+      allSuggestions.filter(
+        (suggestion) =>
+          suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
+      ),
+    );
 
   return (
-      <Box pad="large">
-	<Heading>Chips</Heading>
-        <TagInput
-          placeholder="Search for aliases..."
-          suggestions={suggestions}
-          value={selectedTags}
-          onRemove={onRemoveTag}
-          onAdd={onAddTag}
-          onChange={({ target: { value } }) => onFilterSuggestion(value)}
-        />
-      </Box>
+    <Box pad="large">
+      <Heading>Chips</Heading>
+      <TagInput
+        placeholder="Search for aliases..."
+        suggestions={suggestions}
+        value={selectedTags}
+        onRemove={onRemoveTag}
+        onAdd={onAddTag}
+        onChange={({ target: { value } }) => onFilterSuggestion(value)}
+      />
+    </Box>
   );
 };

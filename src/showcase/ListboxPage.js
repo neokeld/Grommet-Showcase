@@ -1,28 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Heading, List } from "grommet";
+import { Box, Heading, List } from 'grommet';
 
-const data = [
-"vin",
-"pain",
-"fromage"
-];
+const data = ['vin', 'pain', 'fromage'];
 
 export const ListboxPage = () => {
   const [selected, setSelected] = React.useState();
 
   return (
-      <Box pad="large">
-	<Heading>Listbox</Heading>
-        <List
-          data={data}
-          itemProps={
-            selected >= 0 ? { [selected]: { background: "brand" } } : undefined
-          }
-          onClickItem={event =>
-            setSelected(selected === event.index ? undefined : event.index)
-          }
-        />
-      </Box>
+    <Box pad="large">
+      <Heading>Listbox</Heading>
+      <List
+        data={data}
+        itemProps={
+          selected >= 0 ? { [selected]: { background: 'brand' } } : undefined
+        }
+        onClickItem={(event) =>
+          setSelected(selected === event.index ? undefined : event.index)
+        }
+      />
+    </Box>
   );
 };

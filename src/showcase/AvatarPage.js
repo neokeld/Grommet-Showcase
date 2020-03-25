@@ -1,6 +1,6 @@
-import React from "react";
-import { Box, Heading } from "grommet";
-import { Avatar } from "../lib/Avatar";
+import React from 'react';
+import { Box, Heading } from 'grommet';
+import { Avatar } from '../lib/Avatar';
 
 export const AvatarPage = () => (
   <Box pad="large">
@@ -8,4 +8,3 @@ export const AvatarPage = () => (
     <Avatar />
   </Box>
 );
-

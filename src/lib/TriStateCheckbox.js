@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import { CheckBox } from "grommet";
+import React, { useState } from 'react';
+import { CheckBox } from 'grommet';
 
-export const INDETERMINATE = "indeterminate";
+export const INDETERMINATE = 'indeterminate';
 
-export const TriStateCheckbox = ({initialValue = INDETERMINATE, label, onChange = () => {}}) => {
-
+export const TriStateCheckbox = ({
+  initialValue = INDETERMINATE,
+  label,
+  onChange = () => {},
+}) => {
   const [checked, setChecked] = useState(initialValue);
-  const onInternalChange = event => {
-    if(checked === INDETERMINATE) {
+  const onInternalChange = (event) => {
+    if (checked === INDETERMINATE) {
       setChecked(true);
       onChange(true);
     } else if (checked) {
@@ -20,11 +23,11 @@ export const TriStateCheckbox = ({initialValue = INDETERMINATE, label, onChange 
   };
 
   return (
-      <CheckBox
-        checked={checked === true}
-        indeterminate={checked === INDETERMINATE}
-        label={label}
-        onChange={onInternalChange}
-      />
+    <CheckBox
+      checked={checked === true}
+      indeterminate={checked === INDETERMINATE}
+      label={label}
+      onChange={onInternalChange}
+    />
   );
 };

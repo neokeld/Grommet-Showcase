@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Button, Heading, Text } from "grommet";
+import { Box, Button, Heading, Text } from 'grommet';
 
-import { Dialog } from "../lib/Dialog";
+import { Dialog } from '../lib/Dialog';
 
 export const DialogPage = () => {
   const [open, setOpen] = React.useState();
@@ -13,18 +13,15 @@ export const DialogPage = () => {
   return (
     <>
       <Box pad="large">
-	<Heading>Dialog</Heading>
-        <Button
-          label="Open"
-          onClick={onOpen}
-        />
+        <Heading>Dialog</Heading>
+        <Button label="Open" onClick={onOpen} />
       </Box>
       {open && (
         <Dialog onClose={onClose}>
-            <Heading level={3} margin="none">
-              Confirm
-            </Heading>
-            <Text>Are you sure you want to close this dialog?</Text>
+          <Heading level={3} margin="none">
+            Confirm
+          </Heading>
+          <Text>Are you sure you want to close this dialog?</Text>
         </Dialog>
       )}
     </>

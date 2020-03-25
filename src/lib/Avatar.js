@@ -1,5 +1,5 @@
-import React from "react";
-import { Box } from "grommet";
+import React from 'react';
+import { Box } from 'grommet';
 
 export const Avatar = ({ ...rest }) => (
   <Box
@@ -11,4 +11,3 @@ export const Avatar = ({ ...rest }) => (
     {...rest}
   />
 );
-
