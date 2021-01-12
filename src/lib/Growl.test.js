@@ -13,6 +13,6 @@ test('renders with onClose props', () => {
 });
 
 test('renders with position props', () => {
-  const wrapper = shallow(<Growl position='bottom' />);
+  const wrapper = shallow(<Growl position="bottom" />);
   expect(wrapper.find('Layer')).toHaveLength(1);
 });

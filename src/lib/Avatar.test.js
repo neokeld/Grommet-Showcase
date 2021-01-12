@@ -6,4 +6,3 @@ test('renders', () => {
   const wrapper = shallow(<Avatar />);
   expect(wrapper.find('Box')).toHaveLength(1);
 });
-

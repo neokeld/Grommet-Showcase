@@ -9,7 +9,6 @@ test('renders even without onRemove', () => {
 });
 
 test('renders a button with onRemove', () => {
-  const wrapper = shallow(<Tag onRemove={()=>{}}>Remove</Tag>);
+  const wrapper = shallow(<Tag onRemove={() => {}}>Remove</Tag>);
   expect(wrapper.find('Button')).toHaveLength(1);
 });
-

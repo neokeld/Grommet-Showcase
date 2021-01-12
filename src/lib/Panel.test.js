@@ -13,4 +13,3 @@ test('renders even without title', () => {
   expect(wrapper.find('Header')).toHaveLength(1);
   expect(wrapper.find('WithTheme(Collapsible)')).toHaveLength(0);
 });
-

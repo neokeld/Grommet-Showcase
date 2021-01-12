@@ -44,7 +44,7 @@ const TagInput = ({
 }) => {
   const [currentTag, setCurrentTag] = React.useState('');
   const [box, setBox] = React.useState();
-  const boxRef = React.useCallback(setBox, []);
+  const boxRef = React.useCallback(setBox, [setBox]);
 
   const updateCurrentTag = (event) => {
     setCurrentTag(event.target.value);

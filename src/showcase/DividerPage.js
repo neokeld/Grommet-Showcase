@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Heading, Text } from 'grommet';
 import styled from 'styled-components';
 
-import { VerticalDivider } from "../lib/VerticalDivider";
+import { VerticalDivider } from '../lib/VerticalDivider';
 
 const HorizontalDivider = styled.hr`
   background-color: black;
@@ -19,8 +19,8 @@ export const DividerPage = () => (
     <Text>Vertical:</Text>
     <VerticalDivider height="64px" />
     <Text>Vertical with color:</Text>
-    <VerticalDivider height="64px" background={{color: "blue"}} />
+    <VerticalDivider height="64px" background={{ color: 'blue' }} />
     <Text>Doted Vertical:</Text>
-    <VerticalDivider height="64px" background={{doted: true}} />
+    <VerticalDivider height="64px" background={{ doted: true }} />
   </Box>
 );
